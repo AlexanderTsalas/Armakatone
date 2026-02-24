@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Box, Layers, MonitorPlay } from "lucide-react";
+import Link from "next/link";
+import { Box, Layers, MonitorPlay, ArrowRight } from "lucide-react";
 
 export default function ServiceBIM() {
   const containerRef = useRef<HTMLElement>(null);
@@ -22,15 +23,15 @@ export default function ServiceBIM() {
   const opacity3 = useTransform(scrollYProgress, [0.4, 0.8], [0, 1]);
 
   return (
-    <section 
+    <section
       ref={containerRef}
       id="bim"
       className="relative min-h-screen py-32 bg-[#0A0A0A] overflow-hidden flex flex-col lg:flex-row items-center border-t border-white/5"
     >
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
+
         {/* Text Content */}
-        <motion.div 
+        <motion.div
           style={{ y }}
           className="relative z-10"
         >
@@ -39,14 +40,14 @@ export default function ServiceBIM() {
             <span className="w-1 h-1 rounded-full bg-teal-500" />
             <span className="text-xs font-medium text-teal-300 uppercase tracking-widest">BIM Consulting</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold tracking-tight text-white mb-6">
             Digital Twin <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-teal-600">
               Technology
             </span>
           </h2>
-          
+
           <p className="text-zinc-400 text-lg md:text-xl font-light leading-relaxed max-w-lg mb-8">
             Experience your project before it&apos;s built. Our Building Information Modeling (BIM) incorporates 4D/5D planning to visualize complexities, predict costs, and eliminate construction clashes.
           </p>
@@ -68,44 +69,61 @@ export default function ServiceBIM() {
               </div>
             ))}
           </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <Link
+              href="/services"
+              className="group inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-zinc-200"
+            >
+              <span>Learn More</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/projects"
+              className="group inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+            >
+              <span>View BIM Projects</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-zinc-500 group-hover:text-white" />
+            </Link>
+          </div>
         </motion.div>
 
         {/* Visual: 3D Wireframe Perspective */}
         <div className="relative h-[500px] w-full mt-12 lg:mt-0 flex items-center justify-center [perspective:1000px]">
           <div className="absolute inset-0 bg-teal-500/5 blur-[120px] rounded-full" />
-          
-          <motion.div 
+
+          <motion.div
             style={{ rotateX, rotateZ }}
             className="relative w-72 h-72 lg:w-96 lg:h-96 transform-style-3d shadow-2xl shadow-teal-500/20"
           >
             {/* Foundation Wireframe */}
-            <motion.div 
+            <motion.div
               style={{ z: z1, opacity: opacity1 }}
               className="absolute inset-0 border border-teal-700/50 bg-transparent flex items-center justify-center mt-24 ml-12"
             >
-               <div className="w-3/4 h-3/4 border border-teal-700/30 grid grid-cols-3 grid-rows-3">
-                 {[...Array(9)].map((_, i) => <div key={i} className="border border-teal-700/10" />)}
-               </div>
+              <div className="w-3/4 h-3/4 border border-teal-700/30 grid grid-cols-3 grid-rows-3">
+                {[...Array(9)].map((_, i) => <div key={i} className="border border-teal-700/10" />)}
+              </div>
             </motion.div>
 
             {/* Middle Floor Wireframe */}
-            <motion.div 
+            <motion.div
               style={{ z: z2, opacity: opacity2 }}
               className="absolute inset-0 border border-teal-500/50 bg-teal-900/10 flex items-center justify-center mt-12 ml-6"
             >
               <div className="w-3/4 h-3/4 border border-teal-500/30 bg-teal-500/5 grid grid-cols-3 grid-rows-3">
-                 {[...Array(9)].map((_, i) => <div key={i} className="border border-teal-500/10" />)}
-               </div>
+                {[...Array(9)].map((_, i) => <div key={i} className="border border-teal-500/10" />)}
+              </div>
             </motion.div>
 
             {/* Top Floor Wireframe */}
-            <motion.div 
+            <motion.div
               style={{ z: z3, opacity: opacity3 }}
               className="absolute inset-0 border border-teal-400/80 bg-teal-900/20 backdrop-blur-sm flex items-center justify-center shadow-[inset_0_0_50px_rgba(45,212,191,0.2)]"
             >
-               <div className="w-3/4 h-3/4 border border-teal-400/40 bg-teal-500/5 grid grid-cols-3 grid-rows-3">
-                 {[...Array(9)].map((_, i) => <div key={i} className="border border-teal-400/20" />)}
-               </div>
+              <div className="w-3/4 h-3/4 border border-teal-400/40 bg-teal-500/5 grid grid-cols-3 grid-rows-3">
+                {[...Array(9)].map((_, i) => <div key={i} className="border border-teal-400/20" />)}
+              </div>
             </motion.div>
 
             {/* Connecting Vertical Beams */}

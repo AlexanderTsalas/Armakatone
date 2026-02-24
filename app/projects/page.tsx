@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 import { MoveUpRight } from "lucide-react";
 
 // ─── Project Data ─────────────────────────────────────────────────────────────
@@ -237,11 +237,10 @@ export default function ProjectsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 text-xs uppercase tracking-[0.2em] border transition-all duration-300 rounded-none font-light ${
-                  activeFilter === cat
+                className={`px-4 py-2 text-xs uppercase tracking-[0.2em] border transition-all duration-300 rounded-none font-light ${activeFilter === cat
                     ? "border-white bg-white text-black"
                     : "border-white/20 text-zinc-400 hover:border-white/40 hover:text-white"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -286,7 +285,7 @@ export default function ProjectsPage() {
 
                   {/* Row Content */}
                   <div className="relative z-10 container mx-auto px-6 md:px-16 py-8 md:py-10 grid grid-cols-[auto_1fr_auto] md:grid-cols-[80px_1fr_180px_180px_44px] items-center gap-6 md:gap-10">
-                    
+
                     {/* Index */}
                     <span
                       className="font-mono text-xs tabular-nums transition-colors duration-300"
@@ -383,7 +382,7 @@ export default function ProjectsPage() {
         </div>
 
       </main>
-      <Footer />
+
     </>
   );
 }

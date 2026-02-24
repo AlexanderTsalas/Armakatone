@@ -4,15 +4,15 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 import { MoveUpRight } from "lucide-react";
 
 // ─── Animated Counter ─────────────────────────────────────────────────────────
 const stats = [
-  { value: "20+",  label: "Years of Engineering" },
+  { value: "20+", label: "Years of Engineering" },
   { value: "150+", label: "Projects Delivered" },
-  { value: "40+",  label: "Domain Experts" },
-  { value: "4",    label: "Countries Active" },
+  { value: "40+", label: "Domain Experts" },
+  { value: "4", label: "Countries Active" },
 ];
 
 // ─── Values / Manifesto Lines ─────────────────────────────────────────────────
@@ -63,7 +63,7 @@ export default function AboutPage() {
           {/* Atmospheric gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#050505] to-[#050505]" />
           <div className="absolute top-0 left-1/3 w-[700px] h-[700px] bg-white/[0.025] blur-[180px] rounded-full pointer-events-none" />
-          
+
           {/* Parallax headline */}
           <motion.div
             style={{ y: heroY, opacity: heroOpacity }}
@@ -159,13 +159,12 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                className={`text-[clamp(20px,3vw,38px)] font-outfit font-light leading-[1.3] tracking-[-0.02em] mb-4 ${
-                  i === manifestoLines.length - 1
+                className={`text-[clamp(20px,3vw,38px)] font-outfit font-light leading-[1.3] tracking-[-0.02em] mb-4 ${i === manifestoLines.length - 1
                     ? "text-white"
                     : i === 0
-                    ? "text-zinc-300"
-                    : "text-zinc-500"
-                }`}
+                      ? "text-zinc-300"
+                      : "text-zinc-500"
+                  }`}
               >
                 {line}
               </motion.p>
@@ -269,7 +268,7 @@ export default function AboutPage() {
         {/* ── Founding Story ────────────────────────────── */}
         <section className="border-t border-white/8">
           <div className="container mx-auto px-6 md:px-16 py-32 md:py-40 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            
+
             {/* Architectural Visual: HQ Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
@@ -294,7 +293,7 @@ export default function AboutPage() {
                 {/* Roof */}
                 <path d="M 40 100 L 200 30 L 360 100" strokeWidth="1.5" />
               </svg>
-              
+
               {/* Label strip */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
                 <p className="text-white text-sm font-light tracking-wide">Athens Headquarters</p>
@@ -366,7 +365,7 @@ export default function AboutPage() {
         </section>
 
       </main>
-      <Footer />
+
     </>
   );
 }

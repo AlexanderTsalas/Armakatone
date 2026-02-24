@@ -2,13 +2,14 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { CheckCircle2, Clock, HardHat } from "lucide-react";
+import Link from "next/link";
+import { MapPinned, HardHat, Wrench, Key, ArrowRight } from "lucide-react";
 
 const timelineEvents = [
-  { title: "Site Preparation", duration: "Weeks 1-2", status: "completed", icon: CheckCircle2 },
+  { title: "Site Preparation", duration: "Weeks 1-2", status: "completed", icon: MapPinned },
   { title: "Structural Framing", duration: "Weeks 3-6", status: "active", icon: HardHat },
-  { title: "MEP Rough-in", duration: "Weeks 7-10", status: "pending", icon: Clock },
-  { title: "Finishes & Handover", duration: "Weeks 11-14", status: "pending", icon: Clock },
+  { title: "MEP Rough-in", duration: "Weeks 7-10", status: "pending", icon: Wrench },
+  { title: "Finishes & Handover", duration: "Weeks 11-14", status: "pending", icon: Key },
 ];
 
 export default function ServiceManagement() {
@@ -57,6 +58,23 @@ export default function ServiceManagement() {
                 <p className="text-sm text-zinc-400">{item.label}</p>
               </div>
             ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-12">
+            <Link
+              href="/services"
+              className="group inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-zinc-200"
+            >
+              <span>Learn More</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/projects"
+              className="group inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+            >
+              <span>View Management Projects</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-zinc-500 group-hover:text-white" />
+            </Link>
           </div>
         </div>
 
