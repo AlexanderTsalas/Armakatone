@@ -56,7 +56,9 @@ export default function ServiceSmartHome() {
           
           <div className="flex flex-col space-y-3">
              {tabs.map((tab, idx) => (
-               <button 
+               <motion.button 
+                whileHover={{ scale: 1.02, x: 5 }}
+                whileTap={{ scale: 0.98 }}
                 key={idx}
                 onMouseEnter={() => setActiveTab(idx)}
                 className={`flex items-center justify-between p-4 rounded-xl border transition-all duration-300 ${
@@ -70,7 +72,7 @@ export default function ServiceSmartHome() {
                    <span className="font-medium">{tab.label} Control</span>
                  </div>
                  <ChevronRight className={`w-4 h-4 transition-transform ${activeTab === idx ? 'text-indigo-400 translate-x-1' : 'text-zinc-600'}`} />
-               </button>
+               </motion.button>
              ))}
           </div>
         </motion.div>

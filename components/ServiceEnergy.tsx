@@ -84,31 +84,63 @@ export default function ServiceEnergy() {
           </div>
 
           {/* Animated SVG Flows */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
-            {/* Sun to Hub Line */}
-            <path id="sun-to-hub" d="M 20% 20% Q 35% 20% 50% 50%" className="hidden" />
+          <svg viewBox="0 0 800 600" className="absolute inset-0 w-full h-full pointer-events-none z-0" preserveAspectRatio="none">
+            {/* Sun to Hub Path (Drawing) */}
             <motion.path
-              d="M 120 120 L 250 250" // Approximate coords for demo
+              d="M 160 120 Q 280 120 400 300" 
+              stroke="url(#gradient-amber)"
+              strokeWidth="4"
+              fill="none"
+              strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 0.5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, ease: "easeOut" }}
+            />
+            {/* Sun to Hub Flow (Dashed marching) */}
+            <motion.path
+              d="M 160 120 Q 280 120 400 300" 
               stroke="url(#gradient-amber)"
               strokeWidth="2"
               fill="none"
-              strokeDasharray="10 10"
-              initial={{ strokeDashoffset: 100 }}
-              animate={{ strokeDashoffset: -100 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="opacity-70"
+              strokeDasharray="8 8"
+              initial={{ strokeDashoffset: 100, opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              animate={{ strokeDashoffset: 0 }}
+              transition={{ 
+                opacity: { duration: 1, delay: 2 },
+                strokeDashoffset: { duration: 2, repeat: Infinity, ease: "linear" } 
+              }}
             />
-            {/* Hub to Grid Line */}
+
+            {/* Grid to Hub Path (Drawing) */}
             <motion.path
-              d="M 300 300 L 450 450" 
+              d="M 640 480 Q 520 480 400 300" 
+              stroke="url(#gradient-blue)"
+              strokeWidth="4"
+              fill="none"
+              strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 0.5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+            />
+            {/* Grid to Hub Flow (Dashed marching) */}
+            <motion.path
+              d="M 640 480 Q 520 480 400 300" 
               stroke="url(#gradient-blue)"
               strokeWidth="2"
               fill="none"
-              strokeDasharray="10 10"
-              initial={{ strokeDashoffset: 100 }}
-              animate={{ strokeDashoffset: -100 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="opacity-70"
+              strokeDasharray="8 8"
+              initial={{ strokeDashoffset: -100, opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              animate={{ strokeDashoffset: 0 }}
+              transition={{ 
+                opacity: { duration: 1, delay: 2.5 },
+                strokeDashoffset: { duration: 2, repeat: Infinity, ease: "linear" } 
+              }}
             />
             
             <defs>
@@ -116,9 +148,9 @@ export default function ServiceEnergy() {
                 <stop offset="0%" stopColor="#FCD34D" />
                 <stop offset="100%" stopColor="#F59E0B" stopOpacity="0" />
               </linearGradient>
-              <linearGradient id="gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#F59E0B" stopOpacity="0" />
-                <stop offset="100%" stopColor="#60A5FA" />
+              <linearGradient id="gradient-blue" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stopColor="#60A5FA" />
+                <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>

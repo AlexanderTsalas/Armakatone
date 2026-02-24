@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import AnimatedHouseBlueprint from "./AnimatedHouseBlueprint";
 
 export default function ServiceStudies() {
   const containerRef = useRef<HTMLElement>(null);
@@ -11,7 +12,6 @@ export default function ServiceStudies() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const dashOffset = useTransform(scrollYProgress, [0, 0.5], [1000, 0]);
 
   return (
     <section 
@@ -60,38 +60,8 @@ export default function ServiceStudies() {
           </ul>
         </motion.div>
 
-        {/* Visual: Blueprint Animation */}
-        <div className="relative h-[600px] w-full rounded-2xl border border-white/10 bg-[#0A0A0A] overflow-hidden flex items-center justify-center">
-          {/* Blueprint Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
-          
-          {/* SVG Line Animation */}
-          <svg
-            viewBox="0 0 800 600"
-            className="absolute inset-0 w-full h-full opacity-60"
-            fill="none"
-            stroke="white"
-            strokeWidth="1"
-          >
-            <motion.path
-              d="M100 500 L100 200 L400 100 L700 200 L700 500 Z M100 200 L700 200 M400 100 L400 500 M100 500 L700 500 M250 200 L250 500 M550 200 L550 500"
-              strokeDasharray="1000"
-              style={{ strokeDashoffset: dashOffset }}
-              strokeOpacity="0.5"
-            />
-            {/* Overlay detail lines */}
-            <motion.path
-              d="M200 300 H300 V400 H200 Z M500 300 H600 V400 H500 Z"
-              strokeDasharray="500"
-              style={{ strokeDashoffset: dashOffset }}
-              strokeOpacity="0.2"
-              strokeWidth="0.5"
-            />
-          </svg>
-          
-          {/* Glitch/Scanline effect overlay (pure CSS via Tailwind) */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-full w-full opacity-30 animate-pulse pointer-events-none" style={{ backgroundSize: "100% 4px" }} />
-        </div>
+        {/* Visual: Animated Custom Component */}
+        <AnimatedHouseBlueprint />
       </div>
     </section>
   );

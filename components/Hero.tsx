@@ -9,8 +9,16 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
       {/* Cinematic Background Elements */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-[120px] mix-blend-screen" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[150px] mix-blend-screen" />
+        <motion.div 
+          animate={{ x: [0, 50, -30, 0], y: [0, -40, 50, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-[120px] mix-blend-screen" 
+        />
+        <motion.div 
+          animate={{ x: [0, -60, 40, 0], y: [0, 60, -30, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[150px] mix-blend-screen" 
+        />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       </div>
 
@@ -54,19 +62,24 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
         >
-          <Link
-            href="/contact"
-            className="group flex items-center justify-center px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
-          >
-            <span>Start Your Project</span>
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            href="/projects"
-            className="group flex items-center justify-center px-8 py-4 bg-transparent text-white border border-white/20 font-medium rounded-full hover:bg-white/5 transition-all w-full sm:w-auto"
-          >
-            <span>View Portfolio</span>
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+            <Link
+              href="/contact"
+              className="group flex items-center justify-center px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-colors w-full sm:w-auto"
+            >
+              <span>Start Your Project</span>
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+          
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+            <Link
+              href="/projects"
+              className="group flex items-center justify-center px-8 py-4 bg-transparent text-white border border-white/20 font-medium rounded-full hover:bg-white/5 transition-colors w-full sm:w-auto"
+            >
+              <span>View Portfolio</span>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
 

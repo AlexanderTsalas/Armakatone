@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
 import clsx from "clsx";
+import Logo from "./Logo";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -38,47 +39,63 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="relative z-50 group">
-          <span className="font-outfit text-2xl font-bold tracking-tight text-white group-hover:text-zinc-300 transition-colors">
-            ARMAKAT
-          </span>
-        </Link>
+        <div className="flex items-center space-x-3">
+          <Link href="/" className="relative z-50 group flex items-center space-x-3">
+            <Logo />
+            <span className="font-outfit text-2xl font-bold tracking-tight text-white group-hover:text-zinc-300 transition-colors hidden sm:block">
+              ARMAKAT
+            </span>
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
+          {navLinks.map((link, i) => (
+            <motion.div
               key={link.name}
-              href={link.href}
-              className={clsx(
-                "text-sm font-medium transition-colors hover:text-white relative",
-                pathname === link.href ? "text-white" : "text-zinc-400"
-              )}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              {link.name}
-              {pathname === link.href && (
-                <motion.div
-                  layoutId="active-nav-indicator"
-                  className="absolute -bottom-1 left-0 right-0 h-[2px] bg-white rounded-full"
-                />
-              )}
-            </Link>
+              <Link
+                href={link.href}
+                className={clsx(
+                  "text-sm font-medium transition-colors hover:text-white relative",
+                  pathname === link.href ? "text-white" : "text-zinc-400"
+                )}
+              >
+                {link.name}
+                {pathname === link.href && (
+                  <motion.div
+                    layoutId="active-nav-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-white rounded-full"
+                  />
+                )}
+              </Link>
+            </motion.div>
           ))}
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center space-x-6">
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="hidden md:flex items-center space-x-6"
+        >
           <button className="flex items-center space-x-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors">
             <Globe className="w-4 h-4" />
             <span>EN</span>
           </button>
-          <Link
-            href="/contact"
-            className="px-5 py-2.5 bg-white text-black font-semibold text-sm rounded-full hover:bg-zinc-200 transition-colors"
-          >
-            Request a Quote
-          </Link>
-        </div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="/contact"
+              className="px-5 py-2.5 bg-white text-black font-semibold text-sm rounded-full hover:bg-zinc-200 transition-colors"
+            >
+              Request a Quote
+            </Link>
+          </motion.div>
+        </motion.div>
 
         {/* Mobile Menu Toggle */}
         <button

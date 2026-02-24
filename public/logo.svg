@@ -1,0 +1,35 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    Armakat Logo
+    Concept: Interlocking 'A' and 'K' that form a structured, modern building / bridge form.
+    Style: Minimalist, geometric, premium dark-mode aesthetic (white & teal accents).
+  -->
+  
+  <defs>
+    <linearGradient id="AK_gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#a1a1aa" /> <!-- Zinc 400 -->
+    </linearGradient>
+    <linearGradient id="AK_accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5eead4" /> <!-- Teal 300 -->
+      <stop offset="100%" stop-color="#0d9488" /> <!-- Teal 600 -->
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="128" fill="#050505" />
+  
+  <g transform="translate(106, 106)">
+    <!-- The "A" shape forming a strong, stable foundation/truss -->
+    <path d="M150 40 L50 260 L90 260 L125 180 L175 180 L210 260 L250 260 Z" fill="url(#AK_gradient)" />
+    <!-- The crossbar of the A -->
+    <rect x="110" y="200" width="80" height="20" fill="url(#AK_accent)" />
+    
+    <!-- The "K" shape intersecting the "A" geometry -->
+    <!-- The vertical spine of the K -->
+    <rect x="230" y="40" width="30" height="220" fill="url(#AK_gradient)" />
+    <!-- The upper arm of the K -->
+    <path d="M260 140 L330 40 L370 40 L280 160 Z" fill="url(#AK_gradient)" />
+    <!-- The lower leg of the K, highlighting with teal -->
+    <path d="M272 150 L370 260 L320 260 L242 170 Z" fill="url(#AK_accent)" />
+  </g>
+</svg>
