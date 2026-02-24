@@ -21,13 +21,13 @@ export default function ServiceManagement() {
   const lineHeight = useTransform(scrollYProgress, [0, 0.8], ["0%", "100%"]);
 
   return (
-    <section 
+    <section
       ref={containerRef}
       id="management"
       className="relative min-h-screen py-32 bg-[#050505] overflow-hidden flex items-center"
     >
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
+
         {/* Text Content */}
         <div className="relative z-10">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 mb-6 bg-white/5">
@@ -35,18 +35,18 @@ export default function ServiceManagement() {
             <span className="w-1 h-1 rounded-full bg-zinc-600" />
             <span className="text-xs font-medium text-white uppercase tracking-widest">Management & Supervision</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-outfit font-bold tracking-tight text-white mb-6">
             Control Every <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-300 to-zinc-600">
               Variable
             </span>
           </h2>
-          
+
           <p className="text-zinc-400 text-lg md:text-xl font-light leading-relaxed max-w-lg mb-8">
             Rigorous project management guarantees adherence to schedules and budgets. On-site supervision by senior engineers ensures uncompromised quality control.
           </p>
-          
+
           <div className="grid grid-cols-2 gap-6 mt-12">
             {[
               { stat: "100%", label: "Budget Compliance" },
@@ -61,49 +61,106 @@ export default function ServiceManagement() {
         </div>
 
         {/* Visual: Interactive / Animated Timeline UI */}
-        <div className="relative rounded-2xl border border-white/10 bg-[#0A0A0A] p-8 md:p-12 shadow-2xl">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-[60px] pointer-events-none" />
-          
-          <div className="mb-8 flex justify-between items-end border-b border-white/10 pb-4">
-            <div>
-              <p className="text-zinc-500 text-sm font-medium mb-1">Project Status</p>
-              <h3 className="text-xl font-outfit font-semibold text-white">Villa Kifisia</h3>
-            </div>
-            <div className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-medium">
-              In Progress
-            </div>
-          </div>
+        <div className="relative w-full max-w-[500px] h-[600px] md:h-[750px] mx-auto flex items-center justify-center">
 
-          <div className="relative">
-            {/* Animated Vertical Line */}
-            <div className="absolute left-[15px] top-2 bottom-6 w-[2px] bg-white/10" />
-            <motion.div 
-              className="absolute left-[15px] top-2 w-[2px] bg-white"
-              style={{ height: lineHeight }}
+          {/* Background SVG Path */}
+          <svg viewBox="0 0 500 800" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible pointer-events-none">
+            {/* Base faint path */}
+            <path
+              d="M 40 40 L 460 40 L 460 220 L 40 220 L 40 400 L 460 400 L 460 580 L 40 580 L 40 760 L 460 760"
+              fill="none"
+              stroke="rgba(255,255,255,0.05)"
+              strokeWidth="2"
+              strokeLinejoin="miter"
+              vectorEffect="non-scaling-stroke"
             />
 
-            {/* Timeline Items */}
-            <div className="space-y-8 relative z-10">
-              {timelineEvents.map((event, i) => (
-                <div key={i} className="flex space-x-6 items-start">
-                  <div className={`mt-1 flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors duration-500 bg-[#0A0A0A]
-                    ${event.status === 'completed' ? 'border-white text-white' : 
-                      event.status === 'active' ? 'border-white shadow-[0_0_15px_rgba(255,255,255,0.4)] text-white' : 
-                      'border-white/20 text-zinc-600'}
-                  `}>
-                    <event.icon className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className={`text-lg font-medium transition-colors duration-500 ${
-                      event.status === 'pending' ? 'text-zinc-500' : 'text-white'
-                    }`}>
+            {/* Animated drawing path */}
+            <motion.path
+              d="M 40 40 L 460 40 L 460 220 L 40 220 L 40 400 L 460 400 L 460 580 L 40 580 L 40 760 L 460 760"
+              fill="none"
+              stroke="rgba(255,255,255,0.4)"
+              strokeWidth="2"
+              strokeLinejoin="miter"
+              vectorEffect="non-scaling-stroke"
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 4, ease: "linear" }}
+              className="drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+            />
+
+            {/* Traveling Pulse Highlight */}
+            <motion.circle
+              r="4"
+              fill="#ffffff"
+              className="drop-shadow-[0_0_12px_rgba(255,255,255,1)]"
+              initial={{ offsetDistance: "0%" }}
+              whileInView={{ offsetDistance: "100%" }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 4, ease: "linear" }}
+              style={{
+                offsetPath: `path('M 40 40 L 460 40 L 460 220 L 40 220 L 40 400 L 460 400 L 460 580 L 40 580 L 40 760 L 460 760')`,
+              }}
+            />
+          </svg>
+
+          {/* Timeline Nodes & Content overlays mapping to the 500x800 coordinate space roughly */}
+          <div className="absolute inset-0 w-full h-full">
+
+            {timelineEvents.map((event, i) => {
+              // Calculate specific delays based on path length tracking
+              const delays = [0.75, 1.6, 2.5, 3.35];
+              const delay = delays[i];
+
+              const isRightPath = i % 2 === 0;
+
+              // Top positioning based on 800px viewBox coordinate percentages
+              // Box slices start at 5% (40px) and span 22.5% (180px) each.
+              const topBox = `${5 + i * 22.5}%`;
+              const xPosNode = isRightPath ? '92%' : '8%';
+
+              return (
+                <div key={i} className="absolute w-full" style={{ top: topBox, height: '22.5%' }}>
+
+                  {/* The Icon Node */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0, borderColor: "rgba(255,255,255,0.1)", color: "#52525b" }}
+                    whileInView={{ opacity: 1, scale: 1, borderColor: "rgba(255,255,255,0.6)", color: "#ffffff" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5, delay: delay }}
+                    className="absolute w-12 h-12 md:w-14 md:h-14 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#050505] border-[2px] flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.2)] z-20"
+                    style={{ left: xPosNode, top: '50%' }}
+                  >
+                    <event.icon className="w-5 h-5 md:w-6 md:h-6" />
+                  </motion.div>
+
+                  {/* The Content Text (Fading in from the open side) */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isRightPath ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, delay: delay + 0.2 }}
+                    className={`absolute top-1/2 -translate-y-1/2 w-[84%] px-4 md:px-8 flex flex-col justify-center ${isRightPath ? 'left-[8%] items-start text-left' : 'right-[8%] items-end text-right'
+                      }`}
+                  >
+                    <h4 className="text-xl md:text-2xl font-outfit font-semibold text-white drop-shadow-md">
                       {event.title}
                     </h4>
-                    <p className="text-sm text-zinc-500 mt-1">{event.duration}</p>
-                  </div>
+                    <p className="text-sm md:text-base text-zinc-300 font-mono tracking-wider mt-1 mb-2">
+                      {event.duration}
+                    </p>
+                    <p className="text-sm md:text-base text-zinc-500 font-light leading-relaxed max-w-[95%]">
+                      {/* Contextual description matched to exactly each phase */}
+                      {i === 0 && "Clearing, excavation, and fundamental grid layout marking."}
+                      {i === 1 && "Erection of concrete pillars, shear walls, and foundational slabs."}
+                      {i === 2 && "Mechanical, electrical, and plumbing infrastructure routing."}
+                      {i === 3 && "Surface finishing, final inspections, and turnkey delivery."}
+                    </p>
+                  </motion.div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>

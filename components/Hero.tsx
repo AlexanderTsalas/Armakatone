@@ -3,18 +3,24 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Squares from "./Squares";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
-      {/* Cinematic Background Elements */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-[120px] mix-blend-screen" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[150px] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      {/* Animated Squares Background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Squares
+          speed={0.12}
+          squareSize={40}
+          direction='diagonal'
+          borderColor='#1d1a23'
+          hoverFillColor='#302c2c'
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent pointer-events-none" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 md:px-12 flex flex-col items-center text-center mt-20">
+      <div className="container relative z-10 mx-auto px-6 md:px-12 flex flex-col items-center text-center mt-20 pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+          className="mt-12 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 pointer-events-auto"
         >
           <Link
             href="/contact"
@@ -75,7 +81,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none"
       >
         <span className="text-xs text-zinc-500 uppercase tracking-widest mb-2 font-medium">Scroll</span>
         <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
