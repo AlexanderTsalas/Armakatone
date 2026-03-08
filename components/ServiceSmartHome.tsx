@@ -48,7 +48,7 @@ export default function ServiceSmartHome() {
               ].map((light, i) => (
                 <div key={i} className="bg-white/5 p-4 rounded-2xl border border-white/10 flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${light.state === 'On' ? 'bg-indigo-500/20 text-indigo-400' : 'bg-white/5 text-zinc-400'}`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${light.state === 'On' ? 'bg-indigo-500/20 text-indigo-300' : 'bg-white/5 text-zinc-400'}`}>
                       <Lightbulb className="w-4 h-4" />
                     </div>
                     <div>
@@ -66,7 +66,7 @@ export default function ServiceSmartHome() {
             <div className="mt-8">
               <p className="text-xs text-zinc-400 uppercase tracking-widest font-medium mb-3">Scenes</p>
               <div className="grid grid-cols-2 gap-3">
-                <button className="py-3 px-4 rounded-xl bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 text-sm font-medium">Relax</button>
+                <button className="py-3 px-4 rounded-xl bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-sm font-medium">Relax</button>
                 <button className="py-3 px-4 rounded-xl bg-white/5 border border-white/10 text-zinc-400 text-sm font-medium">Focus</button>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function ServiceSmartHome() {
                 <circle cx="50%" cy="50%" r="42%" fill="none" stroke="#6366f1" strokeWidth="8" strokeDasharray="300" strokeDashoffset="80" strokeLinecap="round" />
               </svg>
               <span className="text-5xl font-outfit font-light text-white tracking-tighter">22<span className="text-2xl text-zinc-400">°</span></span>
-              <span className="text-xs text-indigo-400 font-medium mt-1">COOLING</span>
+              <span className="text-xs text-indigo-300 font-medium mt-1">COOLING</span>
             </div>
 
             <div className="grid grid-cols-3 gap-4 w-full">
@@ -100,7 +100,7 @@ export default function ServiceSmartHome() {
                 <Power className="w-5 h-5 mb-1" />
                 <span className="text-xs">Power</span>
               </button>
-              <button className="p-3 rounded-2xl bg-indigo-500/20 border border-indigo-500/30 flex flex-col items-center justify-center text-indigo-400">
+              <button className="p-3 rounded-2xl bg-indigo-500/20 border border-indigo-500/30 flex flex-col items-center justify-center text-indigo-300">
                 <Thermometer className="w-5 h-5 mb-1" />
                 <span className="text-xs">Cool</span>
               </button>
@@ -127,7 +127,7 @@ export default function ServiceSmartHome() {
               <div className="bg-emerald-500/10 border border-emerald-500/20 p-4 rounded-2xl flex flex-col items-center justify-center text-center">
                 <Lock className="w-6 h-6 text-emerald-400 mb-2" />
                 <span className="text-white text-sm font-medium">Front Door</span>
-                <span className="text-emerald-500 text-xs">Locked</span>
+                <span className="text-emerald-400 text-xs">Locked</span>
               </div>
               <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex flex-col items-center justify-center text-center">
                 <Lock className="w-6 h-6 text-zinc-400 mb-2" />
@@ -140,8 +140,8 @@ export default function ServiceSmartHome() {
             <div className="space-y-3">
               <div className="relative h-24 rounded-xl bg-zinc-900 border border-white/10 overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-opacity" />
-                <div className="absolute top-2 right-2 flex items-center space-x-1"><div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" /><span className="text-[10px] font-mono text-white/80">REC</span></div>
-                <div className="relative z-10 flex items-center text-white/80 text-sm font-medium bg-black/40 px-3 py-1 rounded-full backdrop-blur-md"><Video className="w-4 h-4 mr-2" /> Entryway</div>
+                <div className="absolute top-2 right-2 flex items-center space-x-1"><div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" /><span className="text-[10px] font-mono text-white">REC</span></div>
+                <div className="relative z-10 flex items-center text-white text-sm font-medium bg-black/40 px-3 py-1 rounded-full backdrop-blur-md"><Video className="w-4 h-4 mr-2" /> Entryway</div>
               </div>
             </div>
           </motion.div>
@@ -217,7 +217,7 @@ export default function ServiceSmartHome() {
           className="relative z-10"
         >
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-indigo-500/30 mb-6 bg-indigo-500/10">
-            <span className="text-xs font-medium text-indigo-400 uppercase tracking-widest">05</span>
+            <span className="text-xs font-medium text-indigo-300 uppercase tracking-widest">05</span>
             <span className="w-1 h-1 rounded-full bg-indigo-500" />
             <span className="text-xs font-medium text-indigo-300 uppercase tracking-widest">Smart Automation</span>
           </div>
@@ -246,10 +246,10 @@ export default function ServiceSmartHome() {
                   }`}
               >
                 <div className="flex items-center space-x-4">
-                  <tab.icon className={`w-5 h-5 ${activeTab === idx ? 'text-indigo-400' : 'text-zinc-600'}`} />
+                  <tab.icon className={`w-5 h-5 ${activeTab === idx ? 'text-indigo-400' : 'text-zinc-400'}`} />
                   <span className="font-medium">{tab.label} Control</span>
                 </div>
-                <ChevronRight className={`w-4 h-4 transition-transform ${activeTab === idx ? 'text-indigo-400 translate-x-1' : 'text-zinc-600'}`} />
+                <ChevronRight className={`w-4 h-4 transition-transform ${activeTab === idx ? 'text-indigo-400 translate-x-1' : 'text-zinc-400'}`} />
               </motion.button>
             ))}
           </div>
