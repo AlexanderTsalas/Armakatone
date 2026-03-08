@@ -59,7 +59,7 @@ export default function ServiceDetailPage({ data }: Props) {
                 Services
               </Link>
               <span className="text-zinc-700">/</span>
-              <span className="text-xs uppercase tracking-widest text-zinc-500">{data.category}</span>
+              <span className="text-xs uppercase tracking-widest text-zinc-400">{data.category}</span>
             </motion.div>
 
             <motion.p
@@ -152,7 +152,7 @@ export default function ServiceDetailPage({ data }: Props) {
                     <h3 className="text-base md:text-lg font-outfit font-light text-white uppercase tracking-wide mb-3 group-hover:text-zinc-300 transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-zinc-500 font-light text-sm leading-relaxed">
+                    <p className="text-zinc-400 font-light text-sm leading-relaxed">
                       {step.body}
                     </p>
                   </div>
@@ -214,7 +214,7 @@ export default function ServiceDetailPage({ data }: Props) {
             </Link>
             <Link
               href="/services"
-              className="text-zinc-500 text-sm uppercase tracking-[0.2em] hover:text-white transition-colors font-light"
+              className="text-zinc-400 text-sm uppercase tracking-[0.2em] hover:text-white transition-colors font-light"
             >
               All Services →
             </Link>

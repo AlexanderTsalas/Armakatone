@@ -72,7 +72,7 @@ function VisualConstruction() {
           </motion.div>
         ))}
       </div>
-      <div className="absolute bottom-6 left-6 text-zinc-500/50 font-mono text-[10px] tracking-wider">STRUCTURE · B-02</div>
+      <div className="absolute bottom-6 left-6 text-zinc-400/50 font-mono text-[10px] tracking-wider">STRUCTURE · B-02</div>
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0a08] to-transparent pointer-events-none" />
     </div>
   );
@@ -302,7 +302,7 @@ export default function ServicesIndex() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-xs tracking-[0.35em] uppercase text-zinc-500 mb-6 font-light"
+              className="text-xs tracking-[0.35em] uppercase text-zinc-400 mb-6 font-light"
             >
               What We Do
             </motion.p>
@@ -489,7 +489,7 @@ export default function ServicesIndex() {
       <div className="border-t border-white/8">
         <div className="container mx-auto px-6 md:px-16 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <p className="text-zinc-500 text-xs uppercase tracking-widest mb-2">Ready to build?</p>
+            <p className="text-zinc-400 text-xs uppercase tracking-widest mb-2">Ready to build?</p>
             <p className="text-white text-xl md:text-2xl font-outfit font-light">
               Let&apos;s bring your project to life.
             </p>

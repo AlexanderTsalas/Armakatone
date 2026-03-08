@@ -73,7 +73,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-xs tracking-[0.35em] uppercase text-zinc-500 mb-8 font-light"
+              className="text-xs tracking-[0.35em] uppercase text-zinc-400 mb-8 font-light"
             >
               About Armakat
             </motion.p>
@@ -131,7 +131,7 @@ export default function AboutPage() {
                   <span className="text-[clamp(40px,5vw,64px)] font-outfit font-light tracking-[-0.03em] text-white leading-none">
                     {stat.value}
                   </span>
-                  <span className="text-zinc-500 text-xs uppercase tracking-widest">
+                  <span className="text-zinc-400 text-xs uppercase tracking-widest">
                     {stat.label}
                   </span>
                 </motion.div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
                     ? "text-white"
                     : i === 0
                       ? "text-zinc-300"
-                      : "text-zinc-500"
+                      : "text-zinc-400"
                   }`}
               >
                 {line}
@@ -255,7 +255,7 @@ export default function AboutPage() {
                     <h3 className="text-xl md:text-2xl font-outfit font-light text-white uppercase tracking-[-0.02em] mb-4 leading-none group-hover:text-zinc-300 transition-colors duration-300">
                       {pillar.title}
                     </h3>
-                    <p className="text-zinc-500 font-light leading-relaxed text-sm md:text-base">
+                    <p className="text-zinc-400 font-light leading-relaxed text-sm md:text-base">
                       {pillar.body}
                     </p>
                   </div>
@@ -311,7 +311,7 @@ export default function AboutPage() {
               <p className="text-xs tracking-[0.35em] uppercase text-zinc-600 mb-8">Origin</p>
               <h2 className="text-[clamp(32px,4vw,52px)] font-outfit font-light tracking-[-0.03em] text-white leading-[1.1] uppercase mb-8">
                 Founded on<br />
-                <span className="text-zinc-500">First Principles</span>
+                <span className="text-zinc-400">First Principles</span>
               </h2>
               <div className="space-y-5 text-zinc-400 font-light leading-relaxed text-base md:text-lg">
                 <p>
@@ -356,7 +356,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/services"
-                className="text-zinc-500 text-sm uppercase tracking-[0.2em] hover:text-white transition-colors duration-300 font-light"
+                className="text-zinc-400 text-sm uppercase tracking-[0.2em] hover:text-white transition-colors duration-300 font-light"
               >
                 Our Services →
               </Link>

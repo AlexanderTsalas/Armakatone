@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { MoveHorizontal, MousePointer2, ArrowRight } from "lucide-react";
 
 export default function ServiceRenovation() {
@@ -53,7 +54,7 @@ export default function ServiceRenovation() {
             Turnkey execution for residential and commercial projects. We handle every structural phase and interior detail with uncompromised material quality and craftsmanship.
           </p>
 
-          <p className="text-sm text-zinc-500 flex items-center mb-8">
+          <p className="text-sm text-zinc-400 flex items-center mb-8">
             <MousePointer2 className="w-4 h-4 mr-2" />
             Drag the slider to see the transformation
           </p>
@@ -63,7 +64,7 @@ export default function ServiceRenovation() {
               href="/services"
               className="group inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-zinc-200"
             >
-              <span>Learn More</span>
+              <span>Explore Construction Services</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -71,7 +72,7 @@ export default function ServiceRenovation() {
               className="group inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-white/5 hover:border-white/40"
             >
               <span>View Renovation Projects</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-zinc-500 group-hover:text-white" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-zinc-400 group-hover:text-white" />
             </Link>
           </div>
         </motion.div>
@@ -97,7 +98,7 @@ export default function ServiceRenovation() {
           >
             {/* After (Finished) Image */}
             <div className="absolute inset-0">
-              <img src="/photoreal_villa.png" alt="Finished Villa" className="w-full h-full object-cover pointer-events-none" />
+              <Image src="/photoreal_villa.png" alt="Finished Villa" fill className="object-cover pointer-events-none" sizes="(max-width: 768px) 100vw, 50vw" priority />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
               <p className="absolute bottom-4 right-4 text-white/80 font-outfit font-medium text-2xl drop-shadow-md">AFTER</p>
             </div>
@@ -107,7 +108,7 @@ export default function ServiceRenovation() {
               className="absolute inset-0 pointer-events-none"
               style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
             >
-              <img src="/blueprint_wireframe.png" alt="Blueprint Wireframe" className="w-full h-full object-cover grayscale opacity-90" />
+              <Image src="/blueprint_wireframe.png" alt="Blueprint Wireframe" fill className="object-cover grayscale opacity-90" sizes="(max-width: 768px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
               <div className="absolute inset-0 bg-[#00D4FF]/10 mix-blend-overlay pointer-events-none" />
               <p className="absolute bottom-4 left-4 text-white/80 font-outfit font-medium text-2xl drop-shadow-md">BEFORE</p>

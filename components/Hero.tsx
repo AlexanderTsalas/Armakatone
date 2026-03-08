@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Squares from "./Squares";
+
+const Squares = dynamic(() => import("./Squares"), { ssr: false });
 
 export default function Hero() {
   return (
@@ -21,44 +22,32 @@ export default function Hero() {
       </div>
 
       <div className="container relative z-10 mx-auto px-6 md:px-12 flex flex-col items-center text-center mt-20 pointer-events-none">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
+        <div
+          className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 animate-[hero-fade-in_0.8s_both]"
         >
           <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
           <span className="text-xs font-medium text-zinc-300 tracking-wide uppercase">
             Engineering the Future
           </span>
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        <h1
           className="text-5xl md:text-7xl lg:text-8xl font-outfit font-bold tracking-tight text-white max-w-5xl leading-[1.1]"
         >
           Visionary Design.<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-400 to-zinc-600">
             Flawless Execution.
           </span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        <p
           className="mt-8 text-lg md:text-xl text-zinc-400 max-w-2xl font-light"
         >
           Armakat is a premier Greek construction and engineering firm, specializing in delivering sophisticated, high-performance residential and commercial spaces.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 pointer-events-auto"
+        <div
+          className="mt-12 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 pointer-events-auto animate-[hero-fade-in_0.8s_0.4s_both]"
         >
           <Link
             href="/contact"
@@ -73,31 +62,20 @@ export default function Hero() {
           >
             <span>View Portfolio</span>
           </Link>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none"
+      <div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none animate-[hero-fade-in_1s_1.2s_both]"
       >
-        <span className="text-xs text-zinc-500 uppercase tracking-widest mb-2 font-medium">Scroll</span>
+        <span className="text-xs text-zinc-400 uppercase tracking-widest mb-2 font-medium">Scroll</span>
         <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
-          <motion.div
-            animate={{
-              y: ["-100%", "100%"],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.5,
-              ease: "linear",
-            }}
-            className="absolute top-0 left-0 w-full h-[50%] bg-white"
+          <div
+            className="absolute top-0 left-0 w-full h-[50%] bg-white animate-[scroll-indicator_1.5s_linear_infinite]"
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -67,8 +67,8 @@ export default function ContactPage() {
                   <MapPin className="w-5 h-5 text-zinc-300" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Headquarters</h4>
-                  <p className="text-zinc-500 text-sm">Leof. Kifisias 124<br />Marousi 151 25, Athens, Greece</p>
+                  <h3 className="text-white font-medium mb-1">Headquarters</h3>
+                  <p className="text-zinc-400 text-sm">Leof. Kifisias 124<br />Marousi 151 25, Athens, Greece</p>
                 </div>
               </div>
 
@@ -77,8 +77,8 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-zinc-300" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Email inquiries</h4>
-                  <a href="mailto:info@armakat.gr" className="text-zinc-500 text-sm hover:text-white transition-colors">info@armakat.gr</a>
+                  <h3 className="text-white font-medium mb-1">Email inquiries</h3>
+                  <a href="mailto:info@armakat.gr" className="text-zinc-400 text-sm hover:text-white transition-colors">info@armakat.gr</a>
                 </div>
               </div>
 
@@ -87,8 +87,8 @@ export default function ContactPage() {
                   <Phone className="w-5 h-5 text-zinc-300" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Phone</h4>
-                  <a href="tel:+302101234567" className="text-zinc-500 text-sm hover:text-white transition-colors">+30 210 123 4567</a>
+                  <h3 className="text-white font-medium mb-1">Phone</h3>
+                  <a href="tel:+302101234567" className="text-zinc-400 text-sm hover:text-white transition-colors">+30 210 123 4567</a>
                 </div>
               </div>
             </div>

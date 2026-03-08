@@ -20,7 +20,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-outfit text-white font-medium mb-6">Company</h4>
+            <h3 className="font-outfit text-white font-medium mb-6">Company</h3>
             <ul className="space-y-4">
               {["About Us", "Projects", "Process", "Careers"].map((item) => (
                 <li key={item}>
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-outfit text-white font-medium mb-6">Services</h4>
+            <h3 className="font-outfit text-white font-medium mb-6">Services</h3>
             <ul className="space-y-4">
               <li>
                 <Link href="/services#design" className="text-zinc-400 text-sm hover:text-white transition-colors">
@@ -64,7 +64,7 @@ export default function Footer() {
 
           {/* Contact & Legal */}
           <div>
-            <h4 className="font-outfit text-white font-medium mb-6">Connect</h4>
+            <h3 className="font-outfit text-white font-medium mb-6">Connect</h3>
             <ul className="space-y-4 mb-8">
               <li>
                 <a href="mailto:info@armakat.gr" className="text-zinc-400 text-sm hover:text-white transition-colors flex items-center group">
@@ -86,10 +86,10 @@ export default function Footer() {
 
         {/* Deep Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10">
-          <p className="text-zinc-500 text-sm mb-4 md:mb-0">
+          <p className="text-zinc-400 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Armakat. All rights reserved.
           </p>
-          <p className="text-zinc-500 text-sm flex items-center gap-1 hover:text-zinc-300 transition-colors">
+          <p className="text-zinc-400 text-sm flex items-center gap-1 hover:text-zinc-300 transition-colors">
             Designed and maintained by {" "}
             <a
               href="https://distarter.com"

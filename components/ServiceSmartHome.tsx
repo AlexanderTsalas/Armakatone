@@ -48,12 +48,12 @@ export default function ServiceSmartHome() {
               ].map((light, i) => (
                 <div key={i} className="bg-white/5 p-4 rounded-2xl border border-white/10 flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${light.state === 'On' ? 'bg-indigo-500/20 text-indigo-400' : 'bg-white/5 text-zinc-500'}`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${light.state === 'On' ? 'bg-indigo-500/20 text-indigo-400' : 'bg-white/5 text-zinc-400'}`}>
                       <Lightbulb className="w-4 h-4" />
                     </div>
                     <div>
                       <p className="text-white text-sm font-medium">{light.room}</p>
-                      <p className="text-zinc-500 text-xs">{light.state}</p>
+                      <p className="text-zinc-400 text-xs">{light.state}</p>
                     </div>
                   </div>
                   <div className={`w-10 h-6 pl-1 pr-1 flex items-center rounded-full ${light.bg} transition-colors`}>
@@ -64,7 +64,7 @@ export default function ServiceSmartHome() {
             </div>
 
             <div className="mt-8">
-              <p className="text-xs text-zinc-500 uppercase tracking-widest font-medium mb-3">Scenes</p>
+              <p className="text-xs text-zinc-400 uppercase tracking-widest font-medium mb-3">Scenes</p>
               <div className="grid grid-cols-2 gap-3">
                 <button className="py-3 px-4 rounded-xl bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 text-sm font-medium">Relax</button>
                 <button className="py-3 px-4 rounded-xl bg-white/5 border border-white/10 text-zinc-400 text-sm font-medium">Focus</button>
@@ -91,12 +91,12 @@ export default function ServiceSmartHome() {
               <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none">
                 <circle cx="50%" cy="50%" r="42%" fill="none" stroke="#6366f1" strokeWidth="8" strokeDasharray="300" strokeDashoffset="80" strokeLinecap="round" />
               </svg>
-              <span className="text-5xl font-outfit font-light text-white tracking-tighter">22<span className="text-2xl text-zinc-500">°</span></span>
+              <span className="text-5xl font-outfit font-light text-white tracking-tighter">22<span className="text-2xl text-zinc-400">°</span></span>
               <span className="text-xs text-indigo-400 font-medium mt-1">COOLING</span>
             </div>
 
             <div className="grid grid-cols-3 gap-4 w-full">
-              <button className="p-3 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center text-zinc-500 hover:bg-white/10">
+              <button className="p-3 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center text-zinc-400 hover:bg-white/10">
                 <Power className="w-5 h-5 mb-1" />
                 <span className="text-xs">Power</span>
               </button>
@@ -104,7 +104,7 @@ export default function ServiceSmartHome() {
                 <Thermometer className="w-5 h-5 mb-1" />
                 <span className="text-xs">Cool</span>
               </button>
-              <button className="p-3 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center text-zinc-500 hover:bg-white/10">
+              <button className="p-3 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center text-zinc-400 hover:bg-white/10">
                 <Fan className="w-5 h-5 mb-1" />
                 <span className="text-xs">Fan</span>
               </button>
@@ -130,13 +130,13 @@ export default function ServiceSmartHome() {
                 <span className="text-emerald-500 text-xs">Locked</span>
               </div>
               <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex flex-col items-center justify-center text-center">
-                <Lock className="w-6 h-6 text-zinc-500 mb-2" />
+                <Lock className="w-6 h-6 text-zinc-400 mb-2" />
                 <span className="text-white text-sm font-medium">Garage</span>
-                <span className="text-zinc-500 text-xs">Unlocked</span>
+                <span className="text-zinc-400 text-xs">Unlocked</span>
               </div>
             </div>
 
-            <p className="text-xs text-zinc-500 uppercase tracking-widest font-medium mb-3">Live Cameras</p>
+            <p className="text-xs text-zinc-400 uppercase tracking-widest font-medium mb-3">Live Cameras</p>
             <div className="space-y-3">
               <div className="relative h-24 rounded-xl bg-zinc-900 border border-white/10 overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-opacity" />
@@ -163,7 +163,7 @@ export default function ServiceSmartHome() {
               <div className="flex items-center space-x-4 mb-5">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-tr from-purple-500 to-indigo-500 shadow-lg shrink-0" />
                 <div>
-                  <h4 className="text-white font-medium line-clamp-1">Atmospheric Vibes</h4>
+                  <h3 className="text-white font-medium line-clamp-1">Atmospheric Vibes</h3>
                   <p className="text-indigo-300 text-xs">Armakat Radio</p>
                 </div>
               </div>
@@ -184,12 +184,12 @@ export default function ServiceSmartHome() {
               </div>
             </div>
 
-            <p className="text-xs text-zinc-500 uppercase tracking-widest font-medium mb-3">Volume Zones</p>
+            <p className="text-xs text-zinc-400 uppercase tracking-widest font-medium mb-3">Volume Zones</p>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Volume2 className="w-4 h-4 text-zinc-500 shrink-0" />
+                <Volume2 className="w-4 h-4 text-zinc-400 shrink-0" />
                 <div className="flex-grow">
-                  <div className="flex justify-between text-xs mb-1"><span className="text-white">Living Room</span><span className="text-zinc-500">45%</span></div>
+                  <div className="flex justify-between text-xs mb-1"><span className="text-white">Living Room</span><span className="text-zinc-400">45%</span></div>
                   <div className="w-full h-1.5 bg-white/10 rounded-full"><div className="w-[45%] h-full bg-indigo-400 rounded-full" /></div>
                 </div>
               </div>
@@ -242,7 +242,7 @@ export default function ServiceSmartHome() {
                 onClick={() => setActiveTab(idx)}
                 className={`flex items-center justify-between p-4 rounded-xl border transition-all duration-300 ${activeTab === idx
                   ? 'bg-indigo-500/10 border-indigo-500/30 text-white'
-                  : 'bg-transparent border-white/5 text-zinc-500 hover:bg-white/5'
+                  : 'bg-transparent border-white/5 text-zinc-400 hover:bg-white/5'
                   }`}
               >
                 <div className="flex items-center space-x-4">
@@ -259,7 +259,7 @@ export default function ServiceSmartHome() {
               href="/services"
               className="group inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-zinc-200"
             >
-              <span>Learn More</span>
+              <span>Explore Smart Automation</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -267,7 +267,7 @@ export default function ServiceSmartHome() {
               className="group inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-white/5 hover:border-white/40"
             >
               <span>View Residential Projects</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-zinc-500 group-hover:text-white" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-zinc-400 group-hover:text-white" />
             </Link>
           </div>
         </motion.div>

@@ -40,7 +40,7 @@ export default function Header() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <Link href="/" className="relative z-50 group flex items-center space-x-3">
+          <Link href="/" aria-label="Armakat - Home" className="relative z-50 group flex items-center space-x-3">
             <Logo />
             <span className="font-outfit text-2xl font-bold tracking-tight text-white group-hover:text-zinc-300 transition-colors hidden sm:block">
               ARMAKAT
@@ -101,6 +101,8 @@ export default function Header() {
         <button
           className="md:hidden relative z-50 p-2 -mr-2 text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>

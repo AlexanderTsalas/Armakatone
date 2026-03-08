@@ -190,7 +190,7 @@ export default function ProjectsPage() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-xs tracking-[0.35em] uppercase text-zinc-500 mb-6 font-light"
+            className="text-xs tracking-[0.35em] uppercase text-zinc-400 mb-6 font-light"
           >
             Portfolio
           </motion.p>
@@ -306,7 +306,7 @@ export default function ProjectsPage() {
                     <p className="hidden md:block text-zinc-600 text-sm font-light uppercase tracking-widest text-right transition-colors duration-300 group-hover:text-zinc-400">
                       {project.category}
                     </p>
-                    <p className="hidden md:block text-zinc-700 text-sm font-mono text-right transition-colors duration-300 group-hover:text-zinc-500">
+                    <p className="hidden md:block text-zinc-700 text-sm font-mono text-right transition-colors duration-300 group-hover:text-zinc-400">
                       {project.year} · {project.location}
                     </p>
 
@@ -334,7 +334,7 @@ export default function ProjectsPage() {
                         className="overflow-hidden relative z-10"
                       >
                         <div className="container mx-auto px-6 md:px-16 pb-8 flex flex-wrap items-center gap-6 md:gap-10">
-                          <p className="text-zinc-500 text-xs uppercase tracking-widest">
+                          <p className="text-zinc-400 text-xs uppercase tracking-widest">
                             {project.area}
                           </p>
                           <div className="w-px h-4 bg-white/10" />
@@ -373,7 +373,7 @@ export default function ProjectsPage() {
               </a>
               <a
                 href="/services"
-                className="text-zinc-500 text-sm uppercase tracking-[0.2em] font-light hover:text-white transition-colors duration-300"
+                className="text-zinc-400 text-sm uppercase tracking-[0.2em] font-light hover:text-white transition-colors duration-300"
               >
                 Our Services →
               </a>
