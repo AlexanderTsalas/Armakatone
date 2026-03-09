@@ -12,7 +12,7 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="relative min-h-screen bg-[#050505] overflow-hidden pt-32">
+      <main className="relative min-h-screen bg-[#050505] pt-32">
         {/* Ambient Noise / Grain Layer */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] z-0" style={{ backgroundImage: "url('/noise.png')" }} />
 
