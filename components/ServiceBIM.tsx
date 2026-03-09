@@ -72,14 +72,14 @@ export default function ServiceBIM() {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link
-              href="/services"
+              href="/services?service=05"
               className="group inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-zinc-200"
             >
               <span>Explore BIM Services</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
-              href="/projects"
+              href="/projects?serviceFilter=Commercial"
               className="group inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-white/5 hover:border-white/40"
             >
               <span>View BIM Projects</span>

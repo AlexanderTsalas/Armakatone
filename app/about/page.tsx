@@ -160,10 +160,10 @@ export default function AboutPage() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                 className={`text-[clamp(20px,3vw,38px)] font-outfit font-light leading-[1.3] tracking-[-0.02em] mb-4 ${i === manifestoLines.length - 1
-                    ? "text-white"
-                    : i === 0
-                      ? "text-zinc-300"
-                      : "text-zinc-400"
+                  ? "text-white"
+                  : i === 0
+                    ? "text-zinc-300"
+                    : "text-zinc-400"
                   }`}
               >
                 {line}
@@ -321,7 +321,7 @@ export default function AboutPage() {
                   Two decades later, we have delivered over 150 projects spanning luxury residences, commercial complexes, industrial infrastructure, and energy-autonomous buildings across four countries.
                 </p>
                 <p>
-                  Our philosophy has never changed: build things that make the engineers who come after us say, <em className="text-zinc-300 not-italic">&quot;I wish I'd done that.&quot;</em>
+                  Our philosophy has never changed: build things that make the engineers who come after us say, <em className="text-zinc-300 not-italic">&quot;I wish I&apos;d done that.&quot;</em>
                 </p>
               </div>
             </motion.div>

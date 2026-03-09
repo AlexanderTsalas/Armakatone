@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { blueprintPaths } from "./blueprintPaths";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function ServiceStudies() {
   const containerRef = useRef<HTMLElement>(null);
@@ -68,6 +70,23 @@ export default function ServiceStudies() {
               </motion.li>
             ))}
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-12">
+            <Link
+              href="/services?service=01"
+              className="group inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-zinc-200"
+            >
+              <span>Explore Studies & Design</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/projects?serviceFilter=Studies%20&%20Design"
+              className="group inline-flex items-center justify-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 text-sm font-medium transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+            >
+              <span>View Architecture Projects</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-zinc-400 group-hover:text-white" />
+            </Link>
+          </div>
         </motion.div>
 
         {/* Visual: Blueprint Animation */}

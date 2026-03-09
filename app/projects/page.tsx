@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 
 import { MoveUpRight } from "lucide-react";
@@ -168,16 +169,36 @@ const projects = [
   },
 ];
 
-const categories = ["All", "Residential", "Commercial", "Renovation", "Hospitality", "Energy"];
+const categories = [
+  "All",
+  "Residential", "Commercial", "Renovation", "Hospitality",
+  "Studies & Design", "Construction", "Energy", "Project Management", "BIM Integration", "Smart Solutions"
+];
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 export default function ProjectsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#050505]" />}>
+      <ProjectsPageContent />
+    </Suspense>
+  );
+}
+
+function ProjectsPageContent() {
+  const searchParams = useSearchParams();
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
+  useEffect(() => {
+    const filterParam = searchParams.get("serviceFilter");
+    if (filterParam && categories.includes(filterParam)) {
+      setActiveFilter(filterParam);
+    }
+  }, [searchParams]);
+
   const filtered = activeFilter === "All"
     ? projects
-    : projects.filter(p => p.category === activeFilter);
+    : projects.filter(p => p.category === activeFilter || p.tags.includes(activeFilter));
 
   return (
     <>
@@ -238,8 +259,8 @@ export default function ProjectsPage() {
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
                 className={`px-4 py-2 text-xs uppercase tracking-[0.2em] border transition-all duration-300 rounded-none font-light ${activeFilter === cat
-                    ? "border-white bg-white text-black"
-                    : "border-white/20 text-zinc-400 hover:border-white/40 hover:text-white"
+                  ? "border-white bg-white text-black"
+                  : "border-white/20 text-zinc-400 hover:border-white/40 hover:text-white"
                   }`}
               >
                 {cat}

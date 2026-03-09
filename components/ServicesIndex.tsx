@@ -1,9 +1,10 @@
 ﻿"use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { MoveUpRight, ArrowRight } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 // ─── Visual Components ────────────────────────────────────────────────────────
 
@@ -245,11 +246,20 @@ const SCROLL_PER_ITEM_VH = 45;
 // ─── Main Export ──────────────────────────────────────────────────────────────
 
 export default function ServicesIndex() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-black" />}>
+      <ServicesIndexContent />
+    </Suspense>
+  );
+}
+
+function ServicesIndexContent() {
+  const searchParams = useSearchParams();
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const spacerRef = useRef<HTMLDivElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [isDesktop, setIsDesktop] = useState(false);
-  const stableOffsetsRef = useRef<number[]>([]);
+  const [stableOffsets, setStableOffsets] = useState<number[]>([]);
 
   // Detect desktop viewport
   useEffect(() => {
@@ -278,10 +288,27 @@ export default function ServicesIndex() {
         offsets[i] = cumulative;
         cumulative += i === 0 ? avg : (collapsedHeights[i - 1] || avg);
       }
-      stableOffsetsRef.current = offsets;
+      setStableOffsets(offsets);
+
+      // Handle query parameter auto-scroll
+      const serviceParam = searchParams.get("service");
+      if (serviceParam && spacerRef.current) {
+        const targetIndex = servicesData.findIndex(s => s.id === serviceParam);
+        if (targetIndex !== -1) {
+          setActiveIndex(targetIndex);
+          // Auto-scroll the page down to the sticky start of this item
+          const spacerTop = spacerRef.current.getBoundingClientRect().top + window.scrollY;
+          const targetY = spacerTop + (window.innerHeight * (SCROLL_PER_ITEM_VH / 100) * targetIndex);
+
+          window.scrollTo({
+            top: targetY,
+            behavior: "smooth"
+          });
+        }
+      }
     });
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [searchParams]);
 
   // ─── Scroll-Driven Active Index ───
   // Map the scroll position within the spacer to the active item.
@@ -296,20 +323,25 @@ export default function ServicesIndex() {
 
       const rect = spacer.getBoundingClientRect();
       const vh = window.innerHeight;
-      const totalScrollable = rect.height - vh;
-      if (totalScrollable <= 0) return;
 
-      // How far through the spacer we've scrolled (0 → 1)
+      // How far through the spacer we've scrolled (in px)
       const scrolled = -rect.top;
-      const progress = Math.max(0, Math.min(1, scrolled / totalScrollable));
+      if (scrolled < 0) return;
 
-      // Map progress to item index
-      const newIndex = Math.min(
-        servicesData.length - 1,
-        Math.floor(progress * servicesData.length)
+      const itemScrollHeightPx = vh * (SCROLL_PER_ITEM_VH / 100);
+
+      // Map pixel scroll depth to item index
+      const newIndex = Math.max(
+        0,
+        Math.min(
+          servicesData.length - 1,
+          Math.floor(scrolled / itemScrollHeightPx)
+        )
       );
 
-      setActiveIndex(newIndex);
+      if (newIndex !== activeIndex) {
+        setActiveIndex(newIndex);
+      }
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -320,9 +352,8 @@ export default function ServicesIndex() {
   // Compute list translateY from stable offsets
   const listOffset = (() => {
     if (!isDesktop || activeIndex === 0) return 0;
-    const offsets = stableOffsetsRef.current;
-    if (offsets.length === 0) return 0;
-    return -(offsets[activeIndex] || 0);
+    if (stableOffsets.length === 0) return 0;
+    return -(stableOffsets[activeIndex] || 0);
   })();
 
   return (
