@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 
 export const metadata: Metadata = {
-  title: "Energy Autonomy | Armakat",
+  title: "Energy Autonomy | ArmakatOne",
   description: "Designing net-zero, self-sustaining buildings with solar, thermal, and passive energy systems.",
 };
 
@@ -37,7 +37,7 @@ export default function EnergyPage() {
         id: "03",
         title: "Energy Autonomy",
         tagline: "Buildings that generate, store, and manage their own energy. We engineer structures that are as intelligent as they are beautiful.",
-        description: "Energy Autonomy is not a feature added at the end — it is an architectural philosophy woven into our design process from day one. Armakat integrates photovoltaic systems, passive design principles, thermal mass calculation, and smart energy management into a unified engineering solution that minimizes grid dependence and maximizes long-term building performance.",
+        description: "Energy Autonomy is not a feature added at the end — it is an architectural philosophy woven into our design process from day one. ArmakatOne integrates photovoltaic systems, passive design principles, thermal mass calculation, and smart energy management into a unified engineering solution that minimizes grid dependence and maximizes long-term building performance.",
         accentColor: "amber",
         accentHex: "#f59e0b",
         category: "Energy Systems",

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 
 export const metadata: Metadata = {
-  title: "Smart Solutions | Armakat",
+  title: "Smart Solutions | ArmakatOne",
   description: "Invisible, intelligent building automation embedded into the architecture itself — total command over your environment.",
 };
 
@@ -38,7 +38,7 @@ export default function SmartPage() {
         id: "06",
         title: "Smart Solutions",
         tagline: "Architecture that thinks. We embed centralized intelligence into every building we deliver — invisible, effortless, total control.",
-        description: "Armakat's Smart Solutions discipline integrates building automation, IoT sensor networks, and centralized control platforms directly into the construction specification. Lighting, HVAC, security, access, and AV systems are unified under a single interface — specified correctly during design so they work seamlessly on day one, not after weeks of post-completion configuration battles.",
+        description: "ArmakatOne's Smart Solutions discipline integrates building automation, IoT sensor networks, and centralized control platforms directly into the construction specification. Lighting, HVAC, security, access, and AV systems are unified under a single interface — specified correctly during design so they work seamlessly on day one, not after weeks of post-completion configuration battles.",
         accentColor: "rose",
         accentHex: "#fb7185",
         category: "Building Intelligence",

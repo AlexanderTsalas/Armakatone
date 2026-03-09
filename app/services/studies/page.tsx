@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 
 export const metadata: Metadata = {
-  title: "Studies & Design | Armakat",
+  title: "Studies & Design | ArmakatOne",
   description: "Comprehensive architectural, structural, and MEP studies crafted with precision before a single brick is laid.",
 };
 
@@ -38,7 +38,7 @@ export default function StudiesPage() {
         id: "01",
         title: "Studies & Design",
         tagline: "From first sketch to final schematics — we engineer the complete picture before a single cubic metre of concrete is poured.",
-        description: "Our Studies & Design discipline is the intellectual backbone of every Armakat project. We generate comprehensive architectural drawings, structural calculations, MEP schematics, and energy models that serve as the single source of truth for the entire build team. Nothing moves forward without a document that proves it.",
+        description: "Our Studies & Design discipline is the intellectual backbone of every ArmakatOne project. We generate comprehensive architectural drawings, structural calculations, MEP schematics, and energy models that serve as the single source of truth for the entire build team. Nothing moves forward without a document that proves it.",
         accentColor: "cyan",
         accentHex: "#22d3ee",
         category: "Architecture & Engineering",

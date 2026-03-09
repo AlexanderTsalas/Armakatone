@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 
 export const metadata: Metadata = {
-  title: "BIM Integration | Armakat",
+  title: "BIM Integration | ArmakatOne",
   description: "3D Building Information Modeling to eliminate design clashes, save cost, and deliver a complete digital twin of your asset.",
 };
 
@@ -36,7 +36,7 @@ export default function BIMPage() {
         id: "05",
         title: "BIM Integration",
         tagline: "We model every duct, beam, and fixture in 3D before anything is built — eliminating clashes, waste, and costly site disputes.",
-        description: "Building Information Modeling at Armakat is not a visualization tool — it is our primary coordination platform. We build a live, federated 3D model that integrates architectural, structural, and MEP disciplines into a single clash-tested digital twin. Every contractor works from the same model, every change is captured, and the final deliverable is a complete as-built BIM asset for building operations.",
+        description: "Building Information Modeling at ArmakatOne is not a visualization tool — it is our primary coordination platform. We build a live, federated 3D model that integrates architectural, structural, and MEP disciplines into a single clash-tested digital twin. Every contractor works from the same model, every change is captured, and the final deliverable is a complete as-built BIM asset for building operations.",
         accentColor: "emerald",
         accentHex: "#34d399",
         category: "Digital Engineering",

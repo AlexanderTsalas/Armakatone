@@ -75,7 +75,7 @@ export default function AboutPage() {
               transition={{ duration: 0.7 }}
               className="text-xs tracking-[0.35em] uppercase text-zinc-400 mb-8 font-light"
             >
-              About Armakat
+              About ArmakatOne
             </motion.p>
 
             <motion.h1
@@ -96,7 +96,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="text-zinc-400 text-lg md:text-xl font-light leading-relaxed max-w-xl"
             >
-              Armakat is a collective of engineers, architects, and builders obsessed with the built environment. We raise the ceiling on what a structure can be.
+              ArmakatOne is a collective of engineers, architects, and builders obsessed with the built environment. We raise the ceiling on what a structure can be.
             </motion.p>
           </motion.div>
 
@@ -212,7 +212,7 @@ export default function AboutPage() {
             transition={{ duration: 1 }}
           >
             <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-zinc-600">
-              ARMAKAT · SECTION ELEVATION · SCALE 1:100
+              ARMAKATONE · SECTION ELEVATION · SCALE 1:100
             </p>
           </motion.div>
           {/* Scanning line */}
@@ -315,7 +315,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 text-zinc-400 font-light leading-relaxed text-base md:text-lg">
                 <p>
-                  Armakat was founded in Athens in 2005 by a team of structural engineers who believed that the construction industry was fundamentally underestimating what was possible when technology, talent, and design thinking were unified under one roof.
+                  ArmakatOne was founded in Athens in 2005 by a team of structural engineers who believed that the construction industry was fundamentally underestimating what was possible when technology, talent, and design thinking were unified under one roof.
                 </p>
                 <p>
                   Two decades later, we have delivered over 150 projects spanning luxury residences, commercial complexes, industrial infrastructure, and energy-autonomous buildings across four countries.

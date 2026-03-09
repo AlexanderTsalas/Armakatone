@@ -25,12 +25,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Armakat | Premium Construction & Engineering",
-    template: "%s | Armakat",
+    default: "ArmakatOne | Premium Construction & Engineering",
+    template: "%s | ArmakatOne",
   },
   description: "A full-service Greek construction and engineering company delivering modern, premium workspaces and homes. Studies, construction, energy, BIM, and smart home solutions.",
   keywords: ["construction", "engineering", "architecture", "Athens", "Greece", "BIM", "smart home", "energy autonomy", "renovation"],
-  authors: [{ name: "Armakat" }],
+  authors: [{ name: "ArmakatOne" }],
   robots: {
     index: true,
     follow: true,
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Armakat",
-    title: "Armakat | Premium Construction & Engineering",
+    siteName: "ArmakatOne",
+    title: "ArmakatOne | Premium Construction & Engineering",
     description: "A full-service Greek construction and engineering company delivering modern, premium workspaces and homes.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Armakat | Premium Construction & Engineering",
+    title: "ArmakatOne | Premium Construction & Engineering",
     description: "A full-service Greek construction and engineering company delivering modern, premium workspaces and homes.",
   },
   icons: {

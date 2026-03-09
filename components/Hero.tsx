@@ -43,7 +43,7 @@ export default function Hero() {
         <p
           className="mt-8 text-lg md:text-xl text-zinc-400 max-w-2xl font-light"
         >
-          Armakat is a premier Greek construction and engineering firm, specializing in delivering sophisticated, high-performance residential and commercial spaces.
+          ArmakatOne is a premier Greek construction and engineering firm, specializing in delivering sophisticated, high-performance residential and commercial spaces.
         </p>
 
         <div

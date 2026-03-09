@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 
 export const metadata: Metadata = {
-  title: "Project Management | Armakat",
+  title: "Project Management | ArmakatOne",
   description: "Total oversight from blueprint to handover. Orchestrating complex construction projects with precision and accountability.",
 };
 
@@ -43,7 +43,7 @@ export default function ManagementPage() {
         id: "04",
         title: "Project Management",
         tagline: "Complex projects demand total command. We orchestrate every contractor, budget line, and milestone from inception to handover.",
-        description: "Armakat's project management service provides clients with a dedicated construction professional at the helm from day one. We sit client-side, managing principal contractors, design consultants, authorities, and supply chains through a structured programme that protects budget, quality, and time simultaneously.",
+        description: "ArmakatOne's project management service provides clients with a dedicated construction professional at the helm from day one. We sit client-side, managing principal contractors, design consultants, authorities, and supply chains through a structured programme that protects budget, quality, and time simultaneously.",
         accentColor: "violet",
         accentHex: "#818cf8",
         category: "PM & Oversight",

@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import ServicesIndex from "@/components/ServicesIndex";
 
 export const metadata: Metadata = {
-  title: "Services | Armakat",
+  title: "Services | ArmakatOne",
   description: "Explore our comprehensive suite of structural engineering, architectural design, and modern construction services.",
 };
 

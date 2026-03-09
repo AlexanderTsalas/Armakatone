@@ -78,7 +78,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-white font-medium mb-1">Email inquiries</h3>
-                  <a href="mailto:info@armakat.gr" className="text-zinc-400 text-sm hover:text-white transition-colors">info@armakat.gr</a>
+                  <a href="mailto:info@armakatone.gr" className="text-zinc-400 text-sm hover:text-white transition-colors">info@armakatone.gr</a>
                 </div>
               </div>
 

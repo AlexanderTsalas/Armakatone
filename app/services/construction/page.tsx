@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 
 export const metadata: Metadata = {
-  title: "Construction | Armakat",
+  title: "Construction | ArmakatOne",
   description: "End-to-end construction execution for premium residential and commercial spaces across Greece and beyond.",
 };
 
@@ -28,7 +28,7 @@ export default function ConstructionPage() {
         id: "02",
         title: "Construction",
         tagline: "Precision execution from groundbreaking to key handover. We build every structure as if our name were cast into the foundation.",
-        description: "Armakat's construction teams handle end-to-end build management for premium residential, commercial, and industrial projects. We act as the principal contractor responsible for every subcontractor, every schedule, and every inspection — so you deal with one accountable party, not a matrix of trades pointing fingers.",
+        description: "ArmakatOne's construction teams handle end-to-end build management for premium residential, commercial, and industrial projects. We act as the principal contractor responsible for every subcontractor, every schedule, and every inspection — so you deal with one accountable party, not a matrix of trades pointing fingers.",
         accentColor: "zinc",
         accentHex: "#a1a1aa",
         category: "Construction Management",

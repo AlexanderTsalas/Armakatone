@@ -40,11 +40,16 @@ export default function Header() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <Link href="/" aria-label="Armakat - Home" className="relative z-50 group flex items-center space-x-3">
+          <Link href="/" aria-label="Armakatone - Home" className="relative z-50 group flex items-center space-x-3">
             <Logo />
-            <span className="font-outfit text-2xl font-bold tracking-tight text-white group-hover:text-zinc-300 transition-colors hidden sm:block">
-              ARMAKAT
-            </span>
+            <div className="flex flex-col justify-center hidden sm:flex">
+              <span className="font-outfit text-xl font-bold tracking-tight text-white group-hover:text-[#F8D9A2] transition-colors leading-none mb-1">
+                ARMAKATONE
+              </span>
+              <span className="font-outfit text-[0.65rem] font-medium tracking-[0.2em] text-zinc-400 group-hover:text-zinc-300 transition-colors uppercase leading-none">
+                Construction &amp; Renovation
+              </span>
+            </div>
           </Link>
         </div>
 
@@ -77,7 +82,7 @@ export default function Header() {
         </nav>
 
         {/* Desktop Actions */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}

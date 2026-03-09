@@ -164,7 +164,7 @@ export default function ServiceSmartHome() {
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-tr from-purple-500 to-indigo-500 shadow-lg shrink-0" />
                 <div>
                   <h3 className="text-white font-medium line-clamp-1">Atmospheric Vibes</h3>
-                  <p className="text-indigo-300 text-xs">Armakat Radio</p>
+                  <p className="text-indigo-300 text-xs">ArmakatOne Radio</p>
                 </div>
               </div>
 
