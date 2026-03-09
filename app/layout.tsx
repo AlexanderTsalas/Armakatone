@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: "A full-service Greek construction and engineering company delivering modern, premium workspaces and homes.",
   },
   icons: {
-    icon: "/logo.svg",
+    icon: "/Logo/ArmakatOne_Logo_Icon.svg?v=2",
   },
 };
 
